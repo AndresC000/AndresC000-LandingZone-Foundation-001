@@ -47,3 +47,10 @@ variable "key_vault_rbac" {
 variable "log_analytics_workspace_name" {
   type = string
 }
+variable "principal_id" {
+  type = string
+}
+
+variable "allowed_locations" {
+  type = list(string)
+}

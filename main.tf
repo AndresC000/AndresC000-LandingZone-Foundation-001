@@ -38,3 +38,12 @@ module "Monitoring" {
 
   log_analytics_workspace_name = var.log_analytics_workspace_name
 }
+module "Governance" {
+  source = "./Modules/Governance"
+
+  resource_group_id = module.Core.resource_group_id
+
+  principal_id = var.principal_id
+
+  allowed_locations = var.allowed_locations
+}

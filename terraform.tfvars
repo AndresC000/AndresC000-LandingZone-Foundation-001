@@ -32,3 +32,8 @@ key_vault_rbac = {
 log_analytics_workspace_name = "law-lz-foundation-001a"
 
 
+principal_id = "TU_OBJECT_ID"
+
+allowed_locations = [
+  "eastus2"
+]
