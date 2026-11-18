@@ -18,3 +18,14 @@ module "Network" {
   shared_subnet_prefixes     = var.shared_subnet_prefixes
   nsg_name                   = var.nsg_name
 }
+
+module "Security" {
+  source = "./Modules/Security"
+
+  location            = var.location
+  resource_group_name = module.Core.resource_group_name
+
+  key_vault_name = var.key_vault_name
+
+  key_vault_rbac = var.key_vault_rbac
+}

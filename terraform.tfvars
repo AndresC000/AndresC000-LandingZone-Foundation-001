@@ -21,3 +21,10 @@ shared_subnet_prefixes = [
 ]
 
 nsg_name = "nsg-lz-foundation-001a"
+
+key_vault_name = "kv-lz-foundation-001a"
+
+key_vault_rbac = {
+  principal_id = "TU-OBJECT-ID"
+  role_name    = "Key Vault Administrator"
+}

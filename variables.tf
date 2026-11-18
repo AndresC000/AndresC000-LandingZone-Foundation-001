@@ -32,3 +32,14 @@ variable "shared_subnet_prefixes" {
 variable "nsg_name" {
   type = string
 }
+
+variable "key_vault_name" {
+  type = string
+}
+
+variable "key_vault_rbac" {
+  type = object({
+    principal_id = string
+    role_name    = string
+  })
+}
