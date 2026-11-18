@@ -43,3 +43,7 @@ variable "key_vault_rbac" {
     role_name    = string
   })
 }
+
+variable "log_analytics_workspace_name" {
+  type = string
+}

@@ -28,3 +28,7 @@ key_vault_rbac = {
   principal_id = "TU-OBJECT-ID"
   role_name    = "Key Vault Administrator"
 }
+
+log_analytics_workspace_name = "law-lz-foundation-001a"
+
+

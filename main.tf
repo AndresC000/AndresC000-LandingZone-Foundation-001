@@ -29,3 +29,12 @@ module "Security" {
 
   key_vault_rbac = var.key_vault_rbac
 }
+
+module "Monitoring" {
+  source = "./Modules/Monitoring"
+
+  location            = var.location
+  resource_group_name = module.Core.resource_group_name
+
+  log_analytics_workspace_name = var.log_analytics_workspace_name
+}
