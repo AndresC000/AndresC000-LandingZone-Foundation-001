@@ -37,3 +37,6 @@ principal_id = "TU_OBJECT_ID"
 allowed_locations = [
   "eastus2"
 ]
+
+budget_name   = "foundation-budget"
+budget_amount = 50

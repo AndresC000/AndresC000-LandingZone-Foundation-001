@@ -47,3 +47,12 @@ module "Governance" {
 
   allowed_locations = var.allowed_locations
 }
+
+module "FinOps" {
+  source = "./Modules/FinOps"
+
+  resource_group_id = module.Core.resource_group_id
+
+  budget_name   = var.budget_name
+  budget_amount = var.budget_amount
+}

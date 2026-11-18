@@ -54,3 +54,10 @@ variable "principal_id" {
 variable "allowed_locations" {
   type = list(string)
 }
+variable "budget_name" {
+  type = string
+}
+
+variable "budget_amount" {
+  type = number
+}
