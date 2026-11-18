@@ -1,3 +1,23 @@
 location = "East US 2"
 
 resource_group_name = "rg-lz-foundation-001a"
+
+vnet_name = "vnet-lz-foundation-001a"
+
+address_space = [
+  "10.0.0.0/16"
+]
+
+management_subnet_name = "snet-management"
+
+management_subnet_prefixes = [
+  "10.0.1.0/24"
+]
+
+shared_subnet_name = "snet-shared"
+
+shared_subnet_prefixes = [
+  "10.0.2.0/24"
+]
+
+nsg_name = "nsg-lz-foundation-001a"
