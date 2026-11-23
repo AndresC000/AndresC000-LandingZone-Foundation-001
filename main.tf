@@ -56,3 +56,57 @@ module "FinOps" {
   budget_name   = var.budget_name
   budget_amount = var.budget_amount
 }
+
+####ENTERPRISE#####
+
+module "HubSpoke" {
+  source = "./Modules/HubSpoke"
+
+  location            = var.location
+  resource_group_name = module.Core.resource_group_name
+
+  hub_vnet_name          = var.hub_vnet_name
+  hub_address_space      = var.hub_address_space
+  firewall_subnet_prefix = var.firewall_subnet_prefix
+  bastion_subnet_prefix  = var.bastion_subnet_prefix
+
+  app_spoke_name          = var.app_spoke_name
+  app_spoke_address_space = var.app_spoke_address_space
+
+  data_spoke_name          = var.data_spoke_name
+  data_spoke_address_space = var.data_spoke_address_space
+
+  management_spoke_name          = var.management_spoke_name
+  management_spoke_address_space = var.management_spoke_address_space
+}
+
+module "Connectivity" {
+  source = "./Modules/Connectivity"
+
+  location            = var.location
+  resource_group_name = module.Core.resource_group_name
+
+  hub_vnet_id = module.HubSpoke.hub_vnet_id
+}
+
+module "Identity" {
+  source = "./Modules/Identity"
+
+  resource_group_id = module.Core.resource_group_id
+
+  network_contributor_object_id = var.network_contributor_object_id
+
+  security_admin_object_id = var.security_admin_object_id
+
+  reader_object_id = var.reader_object_id
+}
+
+module "Backup" {
+  source = "./Modules/Backup"
+
+  location            = var.location
+  resource_group_name = module.Core.resource_group_name
+
+  recovery_vault_name = var.recovery_vault_name
+  backup_policy_name  = var.backup_policy_name
+}

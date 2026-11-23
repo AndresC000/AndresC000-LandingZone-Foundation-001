@@ -61,3 +61,68 @@ variable "budget_name" {
 variable "budget_amount" {
   type = number
 }
+
+#####ENTERPRISE####
+variable "hub_vnet_name" {
+  type = string
+}
+
+variable "hub_address_space" {
+  type = list(string)
+}
+
+variable "firewall_subnet_prefix" {
+  type = list(string)
+}
+
+variable "bastion_subnet_prefix" {
+  type = list(string)
+}
+
+variable "app_spoke_name" {
+  type = string
+}
+
+variable "app_spoke_address_space" {
+  type = list(string)
+}
+
+variable "data_spoke_name" {
+  type = string
+}
+
+variable "data_spoke_address_space" {
+  type = list(string)
+}
+
+variable "management_spoke_name" {
+  type = string
+}
+
+variable "management_spoke_address_space" {
+  type = list(string)
+}
+
+variable "hub_vnet_id" {
+  type = string
+}
+
+variable "network_contributor_object_id" {
+  type = string
+}
+
+variable "security_admin_object_id" {
+  type = string
+}
+
+variable "reader_object_id" {
+  type = string
+}
+
+variable "recovery_vault_name" {
+  type = string
+}
+
+variable "backup_policy_name" {
+  type = string
+}
