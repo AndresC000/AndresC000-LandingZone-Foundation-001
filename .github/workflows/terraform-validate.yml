@@ -1,0 +1,17 @@
+name: Terraform validate
+
+on:
+    pull_request:
+
+jobs:
+    validate:
+        runs-on: Ubuntu-lLatest
+
+        steps:
+                - uses: actions/checkout@v4
+                - uses: hashicorp/setup-terraform@v3
+                - name: Teraform Init
+                  run: terraform init
+                - name: Terraform Validate
+                  run: terraform validate
+

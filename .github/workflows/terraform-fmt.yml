@@ -1,0 +1,20 @@
+name: Terraform Format
+
+on:
+    push:
+
+jobs:
+    fmt:
+        runs-on: ubuntu-lastest
+        steps:
+            - name: Checkout
+              uses: action/Checkout@v4
+
+            - name: Setup Terraform
+              uses: hashicorp/setup-terraform@v3
+
+            - name: Check Terraform Format
+              run: terraform fmt -check -recursve
+
+
+
